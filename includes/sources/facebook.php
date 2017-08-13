@@ -14,7 +14,7 @@ namespace NickDavis\RemoteContent\Sources;
 function get_remote_content_clean_facebook( $data ) {
 	return array(
 		'text'     => esc_html( $data->data[0]->message ),
-		'text_150' => esc_html( mb_strimwidth( $data->data[0]->message, 0, 150, '...' ) ),
+		//'text_150' => esc_html( mb_strimwidth( $data->data[0]->message, 0, 150, '...' ) ),
 		'url'      => 'https://www.facebook.com/' . $data->data[0]->id,
 		//'username' => '',
 	);
