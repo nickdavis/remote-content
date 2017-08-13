@@ -22,7 +22,7 @@ function get_remote_content( $source, $raw = false ) {
 		return $data;
 	}
 
-	$content = __NAMESPACE__ . '\Sources\get_remote_content_clean_' . $source;
+	$content = '\NickDavis\RemoteContent\Sources\get_remote_content_clean_' . $source;
 
 	return $content( $data );
 }
@@ -40,7 +40,7 @@ function get_remote_content_raw( $source ) {
 
 	if ( false === $content ) {
 		// No cached data, fetch through API.
-		$fetch_remote_content = __NAMESPACE__ . '\Sources\fetch_remote_content_raw_' . $source;
+		$fetch_remote_content = '\NickDavis\RemoteContent\Sources\fetch_remote_content_raw_' . $source;
 		$content              = $fetch_remote_content();
 		// Store in cache.
 		set_transient( TRANSIENT_PREFIX . '_' . $source, $content, EXPIRATION );
