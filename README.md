@@ -42,14 +42,16 @@ define( 'TWITTER_USERNAME', '' ); // Without the @
 First, get the data you need in either the standardised or raw format.
 
 ```php
-\NickDavis\RemoteContent\ContentHandler::fetch_single( 'facebook' );
-\NickDavis\RemoteContent\ContentHandler::fetch_single_raw( 'facebook' ); // Gets the raw, non-standardised data
+use NickDavis\RemoteContent\ContentHandler;
 
-\NickDavis\RemoteContent\ContentHandler::fetch_single( 'instagram' );
-\NickDavis\RemoteContent\ContentHandler::fetch_single_raw( 'instagram' ); // Gets the raw, non-standardised data
+ContentHandler::fetch_single( 'facebook' );
+ContentHandler::fetch_single_raw( 'facebook' ); // Gets the raw, non-standardised data
 
-\NickDavis\RemoteContent\ContentHandler::fetch_single( 'twitter' );
-\NickDavis\RemoteContent\ContentHandler::fetch_single_raw( 'twitter' ); // Gets the raw, non-standardised data
+ContentHandler::fetch_single( 'instagram' );
+ContentHandler::fetch_single_raw( 'instagram' ); // Gets the raw, non-standardised data
+
+ContentHandler::fetch_single( 'twitter' );
+ContentHandler::fetch_single_raw( 'twitter' ); // Gets the raw, non-standardised data
 ```
 
 ### Standard format
