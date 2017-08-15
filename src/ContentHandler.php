@@ -12,6 +12,8 @@
 
 namespace NickDavis\RemoteContent;
 
+use NickDavis\RemoteContent\ContentSource\CachedContentSource;
+
 /**
  * Class ContentHandler.
  *
@@ -86,7 +88,10 @@ final class ContentHandler {
 				? self::SOURCES[ $source ]
 				: ContentSource\NullSource::class;
 
-			self::$instances[ $source ] = new $class();
+			$source_object = new $class();
+			$cached_source_object = new CachedContentSource( $source_object );
+
+			self::$instances[ $source ] = $cached_source_object;
 		}
 
 		return self::$instances[ $source ];
