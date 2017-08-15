@@ -65,7 +65,13 @@ final class ContentHandler {
 	public static function fetch_single( $source ) {
 		$source_object = self::get_source( $source );
 
-		return $source_object->clean( $source_object->fetch_single() );
+		$raw_content = $source_object->fetch_single();
+
+		if ( empty( $raw_content ) ) {
+			return '(technical problem while fetching remote content)';
+		}
+
+		return $source_object->clean( $raw_content );
 	}
 
 	/**
@@ -88,7 +94,7 @@ final class ContentHandler {
 				? self::SOURCES[ $source ]
 				: ContentSource\NullSource::class;
 
-			$source_object = new $class();
+			$source_object        = new $class();
 			$cached_source_object = new CachedContentSource( $source_object );
 
 			self::$instances[ $source ] = $cached_source_object;
