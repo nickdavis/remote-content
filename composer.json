@@ -1,0 +1,11 @@
+{
+  "name": "nickdavis/remote-content",
+  "description": "WordPress plugin to help developers get remote content from Facebook, Instagram and Twitter in a standard format.",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Nick Davis",
+      "email": "inbox@nickdavis.co"
+    }
+  ]
+}
