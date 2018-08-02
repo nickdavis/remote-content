@@ -7,5 +7,8 @@
       "name": "Nick Davis",
       "email": "inbox@nickdavis.co"
     }
-  ]
+  ],
+  "require": {
+    "j7mbo/twitter-api-php": "^1.0"
+  }
 }

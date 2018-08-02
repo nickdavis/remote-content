@@ -84,8 +84,9 @@ function deactivate_plugin() {
  * @return void
  */
 function init_vendor() {
-	if ( ! class_exists( 'TwitterAPIExchange' ) ) {
-		require_once ND_REMOTE_CONTENT_DIR . 'vendor/j7mbo/twitter-api-php/TwitterAPIExchange.php';
+	$autoloader = ND_REMOTE_CONTENT_DIR . 'vendor/autoload.php';
+	if ( is_readable( $autoloader ) ) {
+		require_once $autoloader;
 	}
 }
 

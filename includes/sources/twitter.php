@@ -37,6 +37,10 @@ function get_remote_content_clean_twitter( $data ) {
  * @return object
  */
 function fetch_remote_content_raw_twitter() {
+	if ( ! class_exists( 'TwitterAPIExchange' ) ) {
+		return;
+	}
+
 	if (
 		! defined( 'TWITTER_OAUTH_ACCESS_TOKEN' ) &&
 		! defined( 'TWITTER_OAUTH_ACCESS_TOKEN_SECRET' ) &&
